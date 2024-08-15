@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden; 
+        }
+
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f8f9fa;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            width: 150px;
+        }
+
+        #navbar {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        #navbar li {
+            display: inline;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #navbar a:hover {
+            background-color: #e2e6ea;
+            border-radius: 4px;
+        }
+
+        #navbar a.active {
+            color: #088178;
+            background-color: #e2e6ea;
+            border-radius: 4px;
+        }
+
+        #hero {
+            background-image: url("banner1.png");
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            min-height: 500px; 
+            background-color: #ffc800;
+        }
+
+        #hero h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+
+        #hero h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        #hero h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        #hero button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #088178;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hero button:hover {
+            background-color: #066a6c;
+        }
+
+        #extra-content {
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        #product1 {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        #product1 h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        #product1 p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .pro-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pro {
+            width: 23%;
+            min-width: 250px;
+            padding: 10px;
+            border: 1px solid #cce7d0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pro img {
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .pro .des {
+            padding: 15px;
+        }
+
+        .pro .des span {
+            display: block;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .pro .des h5 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .pro .star {
+            margin: 10px 0;
+        }
+
+        .pro .star i {
+            color: #f39c12;
+            margin: 0 2px;
+            font-size: 20px;
+        }
+
+        .pro h4 {
+            font-size: 22px;
+            color: #333;
+        }
+
+        .pro a {
+            display: block;
+            background-color: #088178;
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .pro a:hover {
+            background-color: #066a6c;
+        }
+
+        #banner {
+            background-image: url('delivery.jpg');            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 40px 20px;
+            color: #fff; /* Белый цвет текста для контраста с фоном */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+            position: relative; /* Позволяет позиционировать элементы внутри */
+        }
+
+        #banner h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #fff; /* Цвет текста должен быть видим на фоне */
+        }
+
+        #banner h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        #banner h2 span {
+            color: #ffd700; /* Например, золотистый для выделения */
+        }
+
+        #banner button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #088178;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #banner button:hover {
+            background-color: #066a6c;
+        }
+        #sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('drinks.png');
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#sm-banner h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#sm-banner p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#sm-banner button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #088178;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#sm-banner button:hover {
+    background-color: #066a6c;
+}
+
+    </style>
+</head>
+<body>
+    <section id="header">
+        <img src="maxfood.jpg" class="logo" alt="Logo">
+        <ul id="navbar">
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </section>
+
+    <section id="hero">
+        <h1>Welcome to Max Food</h1>
+        <h2>Delicious Meals Delivered Fast</h2>
+        <h4>Order Now and Enjoy Great Discounts</h4>
+        <button>Order Now</button>
+    </section>
+
+    <section id="product1">
+        <h2>Our Products</h2>
+        <p>Explore our range of delicious products available for you. From appetizers to main courses, we have something for everyone.</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="butter.jpg" alt="Butter dish">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Butter dish</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>90.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="legs.jpg" alt="Chicken legs">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Chicken legs</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>90.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="burger.jpg" alt="Burger">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Burger</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>90.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="hotpizza.jpg" alt="Pizza with Vegetables">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Pizza with Vegetables</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>160.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="coolpizza.jpg" alt="Pizza with Kazzi">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Pizza with Kazzi</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>155.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="palov.jpg" alt="Palov">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Palov</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>160.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+            <div class="pro">
+                <img src="lavash.jpg" alt="Lavash">
+                <div class="des">
+                    <span>Max food</span>
+                    <h5>Lavash</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>27.000 so'm</h4>
+                </div>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="banner">
+        <h4>From Us</h4>
+        <h2>Delivery In The City is <span>Free</span></h2>
+        <button>Click to Order</button>
+    </section>
+</body>
+</html>

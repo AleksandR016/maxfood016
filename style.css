@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f9fa; 
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+}
+
+#navbar {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; 
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar a:hover {
+    background-color: #e2e6ea; 
+    border-radius: 4px; 
+}
+
+#navbar a.active {
+    color: #088178; 
+    background-color: #e2e6ea; 
+    border-radius: 4px; 
+
+}
+
+#hero{
+    background-image:url("menu.png") ;
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25 right 0;
+    padding:0 80px ;
+}
+
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px;
+    border: 1px solid #cce7d0;
+}
+
+#product .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+#sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('drinks.png') ;
+    min-width: 580px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
